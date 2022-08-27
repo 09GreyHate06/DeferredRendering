@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="GDX11">
+      <UniqueIdentifier>{8A922A0D-F6A6-52BE-BF28-F61D2BFC4EEF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GDX11\Core">
+      <UniqueIdentifier>{22DDF6AD-0E95-38FB-779C-11576373D3EB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GDX11\Event">
+      <UniqueIdentifier>{5B53FA6C-C708-7362-50FD-6C39BCB16966}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GDX11\Renderer">
+      <UniqueIdentifier>{70516C27-5C1F-602D-45B3-D05331203C92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GDX11\Renderer\DXError">
+      <UniqueIdentifier>{050394CE-F1FC-BC20-DA69-5331C602238D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GDX11\Utils">
+      <UniqueIdentifier>{6AD31A6E-D688-9363-5F7D-8D3ACB318A67}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GreyDX11\src\GDX11.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Core\GDX11Assert.h">
+      <Filter>GDX11\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Core\GDX11Exception.h">
+      <Filter>GDX11\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Core\Input.h">
+      <Filter>GDX11\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Core\KeyCodes.h">
+      <Filter>GDX11\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Core\Log.h">
+      <Filter>GDX11\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Core\MouseCodes.h">
+      <Filter>GDX11\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Core\NativeWindow.h">
+      <Filter>GDX11\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Core\Window.h">
+      <Filter>GDX11\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Event\ApplicationEvent.h">
+      <Filter>GDX11\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Event\Event.h">
+      <Filter>GDX11\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Event\KeyEvent.h">
+      <Filter>GDX11\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Event\MouseEvent.h">
+      <Filter>GDX11\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\BlendState.h">
+      <Filter>GDX11\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\Buffer.h">
+      <Filter>GDX11\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\DXError\DXGetErrorDescription.inl">
+      <Filter>GDX11\Renderer\DXError</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\DXError\DXGetErrorString.inl">
+      <Filter>GDX11\Renderer\DXError</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\DXError\DXTrace.inl">
+      <Filter>GDX11\Renderer\DXError</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\DXError\DxgiInfoManager.h">
+      <Filter>GDX11\Renderer\DXError</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\DXError\dxerr.h">
+      <Filter>GDX11\Renderer\DXError</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\DepthStencilState.h">
+      <Filter>GDX11\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\DepthStencilView.h">
+      <Filter>GDX11\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\GDX11Context.h">
+      <Filter>GDX11\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\InputLayout.h">
+      <Filter>GDX11\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\RasterizerState.h">
+      <Filter>GDX11\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\RenderTargetView.h">
+      <Filter>GDX11\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\RenderingResource.h">
+      <Filter>GDX11\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\SamplerState.h">
+      <Filter>GDX11\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\Shader.h">
+      <Filter>GDX11\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\ShaderResourceView.h">
+      <Filter>GDX11\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\Texture2D.h">
+      <Filter>GDX11\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GreyDX11\src\GDX11\Utils\Loader.h">
+      <Filter>GDX11\Utils</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GreyDX11\src\GDX11\Core\Input.cpp">
+      <Filter>GDX11\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="GreyDX11\src\GDX11\Core\Log.cpp">
+      <Filter>GDX11\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="GreyDX11\src\GDX11\Core\Window.cpp">
+      <Filter>GDX11\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\BlendState.cpp">
+      <Filter>GDX11\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\Buffer.cpp">
+      <Filter>GDX11\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\DXError\DxgiInfoManager.cpp">
+      <Filter>GDX11\Renderer\DXError</Filter>
+    </ClCompile>
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\DXError\dxerr.cpp">
+      <Filter>GDX11\Renderer\DXError</Filter>
+    </ClCompile>
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\DepthStencilState.cpp">
+      <Filter>GDX11\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\DepthStencilView.cpp">
+      <Filter>GDX11\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\GDX11Context.cpp">
+      <Filter>GDX11\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\InputLayout.cpp">
+      <Filter>GDX11\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\RasterizerState.cpp">
+      <Filter>GDX11\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\RenderTargetView.cpp">
+      <Filter>GDX11\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\SamplerState.cpp">
+      <Filter>GDX11\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\Shader.cpp">
+      <Filter>GDX11\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\ShaderResourceView.cpp">
+      <Filter>GDX11\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\Texture2D.cpp">
+      <Filter>GDX11\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="GreyDX11\src\GDX11\Utils\Loader.cpp">
+      <Filter>GDX11\Utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

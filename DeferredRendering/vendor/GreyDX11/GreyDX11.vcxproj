@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7AC5B13D-6692-0C49-8FAB-FAF07BD741D7}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>GreyDX11</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>bin\Debug-windows-x86_64\GreyDX11\</OutDir>
+    <IntDir>bin-int\Debug-windows-x86_64\GreyDX11\</IntDir>
+    <TargetName>GreyDX11</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>bin\Release-windows-x86_64\GreyDX11\</OutDir>
+    <IntDir>bin-int\Release-windows-x86_64\GreyDX11\</IntDir>
+    <TargetName>GreyDX11</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>GDX11_IMGUI_SUPPORT;GDX11_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>GreyDX11\src;GreyDX11\vendor;GreyDX11\vendor\stb_image;GreyDX11\vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>GDX11_IMGUI_SUPPORT;GDX11_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>GreyDX11\src;GreyDX11\vendor;GreyDX11\vendor\stb_image;GreyDX11\vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="GreyDX11\src\GDX11.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Core\GDX11Assert.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Core\GDX11Exception.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Core\Input.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Core\KeyCodes.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Core\Log.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Core\MouseCodes.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Core\NativeWindow.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Core\Window.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Event\ApplicationEvent.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Event\Event.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Event\KeyEvent.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Event\MouseEvent.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\BlendState.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\Buffer.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\DXError\DXGetErrorDescription.inl" />
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\DXError\DXGetErrorString.inl" />
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\DXError\DXTrace.inl" />
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\DXError\DxgiInfoManager.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\DXError\dxerr.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\DepthStencilState.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\DepthStencilView.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\GDX11Context.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\InputLayout.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\RasterizerState.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\RenderTargetView.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\RenderingResource.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\SamplerState.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\Shader.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\ShaderResourceView.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Renderer\Texture2D.h" />
+    <ClInclude Include="GreyDX11\src\GDX11\Utils\Loader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GreyDX11\src\GDX11\Core\Input.cpp" />
+    <ClCompile Include="GreyDX11\src\GDX11\Core\Log.cpp" />
+    <ClCompile Include="GreyDX11\src\GDX11\Core\Window.cpp" />
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\BlendState.cpp" />
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\Buffer.cpp" />
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\DXError\DxgiInfoManager.cpp" />
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\DXError\dxerr.cpp" />
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\DepthStencilState.cpp" />
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\DepthStencilView.cpp" />
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\GDX11Context.cpp" />
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\InputLayout.cpp" />
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\RasterizerState.cpp" />
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\RenderTargetView.cpp" />
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\SamplerState.cpp" />
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\Shader.cpp" />
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\ShaderResourceView.cpp" />
+    <ClCompile Include="GreyDX11\src\GDX11\Renderer\Texture2D.cpp" />
+    <ClCompile Include="GreyDX11\src\GDX11\Utils\Loader.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
