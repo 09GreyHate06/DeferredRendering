@@ -13,8 +13,7 @@ namespace GDX11
 	class GDX11Context
 	{
 	public:
-		GDX11Context(const Window* window, const DXGI_SWAP_CHAIN_DESC& scDesc);
-		GDX11Context(HWND hWnd, const DXGI_SWAP_CHAIN_DESC& scDesc);
+		GDX11Context(const DXGI_SWAP_CHAIN_DESC& scDesc);
 		GDX11Context(const GDX11Context&) = delete;
 		GDX11Context& operator=(const GDX11Context&) = delete;
 

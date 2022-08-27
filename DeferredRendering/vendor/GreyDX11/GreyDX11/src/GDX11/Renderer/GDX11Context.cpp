@@ -13,16 +13,11 @@ namespace GDX11
 	DxgiInfoManager GDX11Context::s_infoManager;
 #endif // GDX11_DEBUG
 
-	GDX11Context::GDX11Context(const Window* window, const DXGI_SWAP_CHAIN_DESC& scDesc)
-		: GDX11Context(window->GetNativeWindow(), scDesc)
-	{
-	}
-
-	GDX11Context::GDX11Context(HWND hWnd, const DXGI_SWAP_CHAIN_DESC& scDesc)
+	GDX11Context::GDX11Context( const DXGI_SWAP_CHAIN_DESC& scDesc)
 	{
 		Log::Init();
 
-		GDX11_CORE_ASSERT(IsWindow(hWnd), "Not a window");
+		GDX11_CORE_ASSERT(IsWindow(scDesc.OutputWindow), "Not a window");
 
 		HRESULT hr;
 
