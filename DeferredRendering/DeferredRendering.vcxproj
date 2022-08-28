@@ -98,6 +98,21 @@
       <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\DeferredRendering.cpp" />
+    <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\Utils\BasicMesh.cpp" />
+    <ClCompile Include="src\Utils\Camera.cpp" />
+    <ClCompile Include="src\Utils\CameraController.cpp" />
+    <ClCompile Include="src\Utils\ImGuiBuild.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\DeferredRendering.h" />
+    <ClInclude Include="src\Utils\BasicMesh.h" />
+    <ClInclude Include="src\Utils\Camera.h" />
+    <ClInclude Include="src\Utils\CameraController.h" />
+    <ClInclude Include="src\Utils\ResourceLibrary.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
