@@ -11,7 +11,7 @@ namespace CBuf
 		{
 			struct DirectionalLight
 			{
-				DirectX::XMFLOAT3 direction = { DirectX::XMConvertToRadians(50.0f), DirectX::XMConvertToRadians(-30.0f), 0.0f };
+				DirectX::XMFLOAT3 direction = { 0.0f, -1.0f, 0.0f };
 				float p0;
 				DirectX::XMFLOAT3 ambient = { 0.2f, 0.2f, 0.2f };
 				float p1;
@@ -49,7 +49,7 @@ namespace CBuf
 
 			struct SpotLight
 			{
-				DirectX::XMFLOAT3 direction = { 0.0f, DirectX::XMConvertToRadians(90.0f), 0.0f };
+				DirectX::XMFLOAT3 direction = { 0.0f, -1.0f, 0.0f };
 				float constant = 1.0f;
 				DirectX::XMFLOAT3 position = { 0.0f, 0.0f, 0.0f };
 				float linear = 0.14f;

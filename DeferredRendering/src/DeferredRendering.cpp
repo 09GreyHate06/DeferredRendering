@@ -530,7 +530,7 @@ void DeferredRendering::OnRender()
 	pointLights[3].specular = {  1.0f,  1.0f,  1.0f };
 
 
-	spotLight.direction = { 0.0f, -1.0f, 0.0f };
+	spotLight.direction = { 0.0f, 1.0f, 0.0f };
 	spotLight.position =  { 0.0f,  7.0f, 0.0f };
 
 
@@ -909,6 +909,70 @@ void DeferredRendering::ResizeResources(uint32_t width, uint32_t height)
 	dsvDesc.ViewDimension = D3D11_DSV_DIMENSION_TEXTURE2D;
 	dsvDesc.Texture2D.MipSlice = 0;
 	m_resourceLib.Add("main", DepthStencilView::Create(m_context.get(), dsvDesc, Texture2D::Create(m_context.get(), dsvTexDesc, (void*)nullptr)));
+
+
+
+
+
+
+
+	// G-Buffer
+	{
+		m_resourceLib.Remove<RenderTargetViewArray>("g_buffer");
+		for (int i = 0; i < 5; i++)
+			m_resourceLib.Remove<ShaderResourceView>("g_bufferTextureView" + std::to_string(i));
+
+		std::shared_ptr<RenderTargetViewArray> rtva = std::make_shared<RenderTargetViewArray>();
+		// 0 = pos
+		// 1 = normal 
+		// 2 = diffuse
+		// 3 = specular
+		// 4 = shininess
+		for (int i = 0; i < 5; i++)
+		{
+			D3D11_TEXTURE2D_DESC texDesc = {};
+			texDesc.Width = width;
+			texDesc.Height = height;
+			texDesc.MipLevels = 1;
+			texDesc.ArraySize = 1;
+
+			if (i < 2)
+				texDesc.Format = DXGI_FORMAT_R32G32B32A32_FLOAT;
+			else if (i < 4)
+				texDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
+			else
+				texDesc.Format = DXGI_FORMAT_R32_FLOAT;
+
+			texDesc.SampleDesc.Count = 1;
+			texDesc.SampleDesc.Quality = 0;
+			texDesc.Usage = D3D11_USAGE_DEFAULT;
+			texDesc.BindFlags = D3D11_BIND_RENDER_TARGET | D3D11_BIND_SHADER_RESOURCE;
+			texDesc.CPUAccessFlags = 0;
+			texDesc.MiscFlags = 0;
+
+			D3D11_RENDER_TARGET_VIEW_DESC rtvDesc = {};
+			rtvDesc.Format = texDesc.Format;
+			rtvDesc.ViewDimension = D3D11_RTV_DIMENSION_TEXTURE2D;
+			rtvDesc.Texture2D.MipSlice = 0;
+
+			D3D11_SHADER_RESOURCE_VIEW_DESC srvDesc = {};
+			srvDesc.Format = texDesc.Format;
+			srvDesc.ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2D;
+			srvDesc.Texture2D.MostDetailedMip = 0;
+			srvDesc.Texture2D.MipLevels = 1;
+
+			auto texture = Texture2D::Create(m_context.get(), texDesc, (void*)nullptr);
+			rtva->push_back(RenderTargetView::Create(m_context.get(), rtvDesc, texture));
+			m_resourceLib.Add("g_bufferTextureView" + std::to_string(i), ShaderResourceView::Create(m_context.get(), srvDesc, texture));
+		}
+
+		m_resourceLib.Add("g_buffer", rtva);
+	}
+
+
+
+
+
 
 
 	m_camera.SetAspect((float)m_window->GetDesc().width / (float)m_window->GetDesc().height);
