@@ -30,6 +30,9 @@ private:
 	void ImGuiBegin();
 	void ImGuiEnd();
 
+	void DrawScene();
+	void DrawCube();
+	void DrawPlane();
 
 	bool OnWindowResizedEvent(GDX11::WindowResizeEvent& e);
 	void ResizeResources(uint32_t width, uint32_t height);
