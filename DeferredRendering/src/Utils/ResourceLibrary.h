@@ -11,6 +11,7 @@ namespace DRUtils
 	X(DepthStencilView) \
 	X(RasterizerState) \
 	X(RenderTargetView) \
+	X(RenderTargetViewArray) \
 	X(SamplerState) \
 	X(VertexShader) \
 	X(GeometryShader) \

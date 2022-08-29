@@ -35,6 +35,27 @@ namespace GDX11
 		m_context->GetDeviceContext()->OMSetRenderTargets(1, m_rtv.GetAddressOf(), dsv);
 	}
 
+	void RenderTargetView::Bind(uint32_t numViews, const std::shared_ptr<RenderTargetView>* rtvs, const DepthStencilView* ds)
+	{
+		ID3D11DepthStencilView* dsv = ds ? ds->GetNative() : nullptr;
+		std::vector<ID3D11RenderTargetView*> rtvArr(numViews);
+		for (int i = 0; i < numViews; i++)
+			rtvArr[i] = rtvs[i]->GetNative();
+
+		rtvs[0]->GetContext()->GetDeviceContext()->OMSetRenderTargets(numViews, rtvArr.data(), dsv);
+	}
+
+
+	void RenderTargetView::Bind(const RenderTargetViewArray& rtva, const DepthStencilView* ds)
+	{
+		ID3D11DepthStencilView* dsv = ds ? ds->GetNative() : nullptr;
+		std::vector<ID3D11RenderTargetView*> rtvArr(rtva.size());
+		for (int i = 0; i < rtva.size(); i++)
+			rtvArr[i] = rtva[i]->GetNative();
+
+		rtva[0]->GetContext()->GetDeviceContext()->OMSetRenderTargets(rtva.size(), rtvArr.data(), dsv);
+	}
+
 	std::shared_ptr<RenderTargetView> RenderTargetView::Create(GDX11Context* context, const D3D11_RENDER_TARGET_VIEW_DESC& rtvDesc, const std::shared_ptr<Texture2D>& tex)
 	{
 		return std::shared_ptr<RenderTargetView>(new RenderTargetView(context, rtvDesc, tex));
