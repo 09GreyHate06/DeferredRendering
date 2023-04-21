@@ -234,7 +234,7 @@ void DeferredRendering::SetBuffers()
 		m_resourceLib.Add("vb.cube", Buffer::Create(m_context.get(), buffDesc, cubeVert.data()));
 
 		buffDesc.BindFlags = D3D11_BIND_INDEX_BUFFER;
-		buffDesc.ByteWidth = (uint32_t)cubeInd.size() * sizeof(float);
+		buffDesc.ByteWidth = (uint32_t)cubeInd.size() * sizeof(uint32_t);
 		buffDesc.CPUAccessFlags = 0;
 		buffDesc.MiscFlags = 0;
 		buffDesc.StructureByteStride = sizeof(uint32_t);
